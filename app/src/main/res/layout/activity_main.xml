@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Logo del restaurante -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="219dp"
+        android:layout_height="148dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/logo_restaurant" />
+
+    <!-- Imagen de Pastel de Jaiva -->
+    <ImageView
+        android:id="@+id/pasteljaiva"
+        android:layout_width="148dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        app:srcCompat="@drawable/pastel_de_jaiva" />
+
+    <!-- Nombre y precio del Pastel de Jaiva -->
+    <TextView
+        android:id="@+id/jaivaNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pastel de Jaiva"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/pasteljaiva"
+        app:layout_constraintStart_toStartOf="@id/pasteljaiva" />
+
+    <TextView
+        android:id="@+id/jaivaPrecio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$12.000"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/jaivaNombre"
+        app:layout_constraintStart_toStartOf="@id/jaivaNombre" />
+
+    <!-- EditText para cantidad de Pastel de Jaiva -->
+    <EditText
+        android:id="@+id/cantidadJaivaEditText"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:hint="Cant"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="@id/jaivaPrecio"
+        app:layout_constraintTop_toBottomOf="@id/jaivaPrecio" />
+
+    <!-- Imagen de Mariscal Gourmet -->
+    <ImageView
+        android:id="@+id/mariscalgourmet"
+        android:layout_width="148dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/cantidadJaivaEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        app:srcCompat="@drawable/mariscal_gourmet" />
+
+    <!-- Nombre y precio del Mariscal Gourmet -->
+    <TextView
+        android:id="@+id/mariscalNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mariscal Gourmet"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/mariscalgourmet"
+        app:layout_constraintStart_toStartOf="@id/mariscalgourmet" />
+
+    <TextView
+        android:id="@+id/mariscalPrecio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$10.000"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/mariscalNombre"
+        app:layout_constraintStart_toStartOf="@id/mariscalNombre" />
+
+    <!-- EditText para cantidad de Mariscal Gourmet -->
+    <EditText
+        android:id="@+id/cantidadMariscalEditText"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:hint="Cant"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="@id/mariscalPrecio"
+        app:layout_constraintTop_toBottomOf="@id/mariscalPrecio" />
+
+    <!-- Switch para incluir propina -->
+    <Switch
+        android:id="@+id/propinaSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:minHeight="48dp"
+        android:text="Incluir propina"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cantidadMariscalEditText" />
+
+    <!-- TextViews para mostrar subtotal, propina y total -->
+    <TextView
+        android:id="@+id/subtotalTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Subtotal: $0"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/propinaSwitch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <TextView
+        android:id="@+id/propinaTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Propina: $0"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/subtotalTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <TextView
+        android:id="@+id/totalTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total: $0"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/propinaTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
+</androidx.constraintlayout.widget.ConstraintLayout>
